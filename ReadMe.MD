@@ -13,10 +13,14 @@ minikube delete && minikube start --kubernetes-version=v1.23.0 --memory=6g --boo
 ### 2. Installing Prometheus + Grafana using kube-prometheus-stack helm chart
 
 
-#### 2.1.  ```helm repo add prometheus-community https://prometheus-community.github.io/helm-charts```
-#### 2.2.  ```helm repo update```
-#### 2.3.  ```kubectl create ns prometheus```
-#### 2.4.  ```helm install prometheus prometheus-community/kube-prometheus-stack -n prometheus```
+#### 2.1. Add the prometheus-community helm repo
+```helm repo add prometheus-community https://prometheus-community.github.io/helm-charts```
+#### 2.2. Update the helm repo 
+```helm repo update```
+#### 2.3. Create a namespace called prometheus  
+```kubectl create ns prometheus```
+#### 2.4. Install the helm chart that include Prometheus + Grafana  
+```helm install prometheus prometheus-community/kube-prometheus-stack -n prometheus```
 
 ### Deleting the K8S Cluster
 minikube delete
