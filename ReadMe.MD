@@ -55,5 +55,6 @@ minikube delete
 4. [Prometheus on Kubernetes: Day 28 of #100DaysOfKubernetes - Anais Urlichs](https://www.youtube.com/watch?v=n4eF8EcgpZQ) 
 5. [Getting started with Prometheus Grafana and Node exporter - Part 1 - Rahul Wagh](https://www.youtube.com/watch?v=peH95b16hNI&list=PL7iMyoQPMtAPbN3A7Prac8vfikIPa02wd&index=1)
 6. [ Prometheus Grafana dashboard for Kubernetes monitoring - Part 2 - Rahul Wagh](https://www.youtube.com/watch?v=3Xs49Urq16M&list=PL7iMyoQPMtAPbN3A7Prac8vfikIPa02wd&index=3) 
+7. [A Beginner's Guide to Using the Prometheus Operator - Rodrigo Martinez](https://blog.container-solutions.com/prometheus-operator-beginners-guide)
 
 
