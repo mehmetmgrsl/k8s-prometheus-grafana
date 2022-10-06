@@ -38,6 +38,12 @@ Then open a browser and access the dashboard with the address below:
 
 ```http://localhost:9090```
 
+#### 2.7. Check the Service Monitors
+
+ServiceMonitor declaratively specifies how groups of Kubernetes services should be monitored. 
+
+```kubectl -n prometheus get servicemonitors```
+
 ### Deleting the K8S Cluster
 minikube delete
 
