@@ -1,6 +1,6 @@
 ### 1. Creating a K8S Cluster
 
-Run the following command to create cluster.
+Run the following command to create a K8S cluster.
 
 ```minikube delete && minikube start --kubernetes-version=v1.23.0 --memory=6g --bootstrapper=kubeadm --extra-config=kubelet.authentication-token-webhook=true --extra-config=kubelet.authorization-mode=Webhook --extra-config=scheduler.bind-address=0.0.0.0 --extra-config=controller-manager.bind-address=0.0.0.0```
 
@@ -19,25 +19,34 @@ Run the following command to create cluster.
 ```kubectl create ns prometheus```
 #### 2.4. Install the helm chart that include Prometheus + Grafana  
 ```helm install prometheus prometheus-community/kube-prometheus-stack -n prometheus```
-#### 2.5. Access the Dashboard of the Grafana by using port-forward.
+#### 2.5. Access the Dashboard of the Grafana by using port-forward
 ```kubectl -n prometheus port-forward deployment/prometheus-grafana 3000```
-#### 2.6. Open a browser and access the dashboard with the address below:
+
+Then open a browser and access the dashboard with the address below:
+
 ```http://localhost:3000```
 
 ```default username : admin```
 
 ```default password: prom-operator```
 
+#### 2.6.  Access the Dashboard of the Prometheus by using port-forward
+
+```kubectl port-forward svc/prometheus-operated 9090 -n prometheus```
+
+Then open a browser and access the dashboard with the address below:
+
+```http://localhost:9090```
 
 ### Deleting the K8S Cluster
 minikube delete
 
 
 ### Resources
-
-1. https://github.com/prometheus-operator/kube-prometheus
-2. [How to Monitor a Kubernetes Cluster in 2022 with Prometheus & Grafana](https://www.youtube.com/watch?v=YDtuwlNTzRc)
-3. https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack 
-4. 
+1. https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack
+2. https://github.com/prometheus-operator/kube-prometheus
+3. [How to Monitor a Kubernetes Cluster in 2022 with Prometheus & Grafana](https://www.youtube.com/watch?v=YDtuwlNTzRc)
+4.  
+5. 
 
 
