@@ -45,8 +45,9 @@ minikube delete
 ### Resources
 1. https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack
 2. https://github.com/prometheus-operator/kube-prometheus
-3. [How to Monitor a Kubernetes Cluster in 2022 with Prometheus & Grafana](https://www.youtube.com/watch?v=YDtuwlNTzRc)
-4.  
-5. 
+3. [How to Monitor a Kubernetes Cluster in 2022 with Prometheus & Grafana - That DevOps Guy - Marcel Dempers](https://www.youtube.com/watch?v=YDtuwlNTzRc)
+4. [Prometheus on Kubernetes: Day 28 of #100DaysOfKubernetes - Anais Urlichs](https://www.youtube.com/watch?v=n4eF8EcgpZQ) 
+5. [Getting started with Prometheus Grafana and Node exporter - Part 1 - Rahul Wagh](https://www.youtube.com/watch?v=peH95b16hNI&list=PL7iMyoQPMtAPbN3A7Prac8vfikIPa02wd&index=1)
+6. [ Prometheus Grafana dashboard for Kubernetes monitoring - Part 2 - Rahul Wagh](https://www.youtube.com/watch?v=3Xs49Urq16M&list=PL7iMyoQPMtAPbN3A7Prac8vfikIPa02wd&index=3) 
 
 
