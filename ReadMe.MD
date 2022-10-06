@@ -21,6 +21,15 @@ minikube delete && minikube start --kubernetes-version=v1.23.0 --memory=6g --boo
 ```kubectl create ns prometheus```
 #### 2.4. Install the helm chart that include Prometheus + Grafana  
 ```helm install prometheus prometheus-community/kube-prometheus-stack -n prometheus```
+#### 2.5. Access the Dashboard of the Grafana by using port-forward.
+```kubectl -n prometheus port-forward deployment/prometheus-grafana 3000```
+#### 2.6. Open a browser and access the dashboard with the address below:
+```http://localhost:3000```
+
+```default username : admin```
+
+```default password: prom-operator```
+
 
 ### Deleting the K8S Cluster
 minikube delete
