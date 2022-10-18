@@ -1,5 +1,6 @@
 ### 1. Creating a K8S Cluster
 
+#### 1.1. On Local Machine using minikube
 Run the following command to create a K8S cluster.
 
 ```minikube delete && minikube start --kubernetes-version=v1.23.0 --memory=6g --bootstrapper=kubeadm --extra-config=kubelet.authentication-token-webhook=true --extra-config=kubelet.authorization-mode=Webhook --extra-config=scheduler.bind-address=0.0.0.0 --extra-config=controller-manager.bind-address=0.0.0.0```
@@ -7,6 +8,13 @@ Run the following command to create a K8S cluster.
 * Kubernetes v1.23.0 is compatible with release-0.10 and release-0.11 of the kube-prometheus.
 
 * Check https://github.com/prometheus-operator/kube-prometheus#compatibility for the compability.
+
+#### 1.2. On AWS
+
+Run the following command to create a K8S cluster named 'next-try-out-cluster' on AWS.
+
+```eksctl create cluster --name next-try-out-cluster --version 1.23 --region eu-west-1 --nodegroup-name worker-nodes --node-type t2.large --nodes 2 --nodes-min 2 --nodes-max 3```
+
 
 ### 2. Installing Prometheus + Grafana using kube-prometheus-stack helm chart
 
