@@ -52,6 +52,18 @@ ServiceMonitor declaratively specifies how groups of Kubernetes services should 
 
 ```kubectl -n prometheus get servicemonitors```
 
+
+#### 2.8. Install Helm Dashboard Plugin
+
+The Helm Dashboard plugin offers a UI-driven way to view the installed Helm charts. Run the command below to install it:
+
+```helm plugin install https://github.com/komodorio/helm-dashboard.git```
+
+Start UI  with the following command:
+
+```helm dashboard```
+
+
 ### Deleting the K8S Cluster
 minikube delete
 
@@ -64,5 +76,6 @@ minikube delete
 5. [Getting started with Prometheus Grafana and Node exporter - Part 1 - Rahul Wagh](https://www.youtube.com/watch?v=peH95b16hNI&list=PL7iMyoQPMtAPbN3A7Prac8vfikIPa02wd&index=1)
 6. [ Prometheus Grafana dashboard for Kubernetes monitoring - Part 2 - Rahul Wagh](https://www.youtube.com/watch?v=3Xs49Urq16M&list=PL7iMyoQPMtAPbN3A7Prac8vfikIPa02wd&index=3) 
 7. [A Beginner's Guide to Using the Prometheus Operator - Rodrigo Martinez](https://blog.container-solutions.com/prometheus-operator-beginners-guide)
+8. [Helm Dashboard](https://github.com/komodorio/helm-dashboard)
 
 
