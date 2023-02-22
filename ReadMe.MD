@@ -5,10 +5,6 @@ Run the following command to create a K8S cluster.
 
 ```minikube delete && minikube start --kubernetes-version=v1.23.0 --memory=6g --bootstrapper=kubeadm --extra-config=kubelet.authentication-token-webhook=true --extra-config=kubelet.authorization-mode=Webhook --extra-config=scheduler.bind-address=0.0.0.0 --extra-config=controller-manager.bind-address=0.0.0.0```
 
-* Kubernetes v1.23.0 is compatible with release-0.10 and release-0.11 of the kube-prometheus.
-
-* Check https://github.com/prometheus-operator/kube-prometheus#compatibility for the compability.
-
 #### 1.2. On AWS
 
 Run the following command to create a K8S cluster named 'next-try-out-cluster' on AWS.
