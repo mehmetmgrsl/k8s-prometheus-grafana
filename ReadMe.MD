@@ -61,7 +61,8 @@ Start UI  with the following command:
 
 
 ### Deleting the K8S Cluster
-minikube delete
+
+```eksctl delete cluster --region=eu-west-1 --name=next-try-out-cluster```
 
 
 ### Resources
