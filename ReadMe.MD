@@ -19,12 +19,12 @@ Run the following command to create a K8S cluster named 'next-try-out-cluster' o
 ```helm repo add prometheus-community https://prometheus-community.github.io/helm-charts```
 #### 2.2. Update the helm repo 
 ```helm repo update```
-#### 2.3. Create a namespace called prometheus  
-```kubectl create ns prometheus```
+#### 2.3. Create a namespace called monitoring  
+```kubectl create ns monitoring```
 #### 2.4. Install the helm chart that include Prometheus + Grafana  
-```helm install prometheus prometheus-community/kube-prometheus-stack -n prometheus```
+```helm install prometheus prometheus-community/kube-prometheus-stack -n monitoring```
 #### 2.5. Access the Dashboard of the Grafana by using port-forward
-```kubectl -n prometheus port-forward deployment/prometheus-grafana 3000```
+```kubectl -n monitoring port-forward deployment/prometheus-grafana 3000```
 
 Then open a browser and access the dashboard with the address below:
 
@@ -36,7 +36,7 @@ Then open a browser and access the dashboard with the address below:
 
 #### 2.6.  Access the Dashboard of the Prometheus by using port-forward
 
-```kubectl port-forward svc/prometheus-operated 9090 -n prometheus```
+```kubectl port-forward svc/prometheus-operated 9090 -n monitoring```
 
 Then open a browser and access the dashboard with the address below:
 
@@ -46,7 +46,7 @@ Then open a browser and access the dashboard with the address below:
 
 ServiceMonitor declaratively specifies how groups of Kubernetes services should be monitored. 
 
-```kubectl -n prometheus get servicemonitors```
+```kubectl -n monitoring get servicemonitors```
 
 
 #### 2.8. Install Helm Dashboard Plugin
