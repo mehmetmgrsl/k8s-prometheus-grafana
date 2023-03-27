@@ -23,18 +23,33 @@ Run the following command to create a K8S cluster named 'next-try-out-cluster' o
 ```kubectl create ns monitoring```
 #### 2.4. Install the helm chart that include Prometheus + Grafana  
 ```helm install prometheus prometheus-community/kube-prometheus-stack -n monitoring```
-#### 2.5. Access the Dashboard of the Grafana by using port-forward
+#### 2.5. Access the Dashboard of the Grafana 
+#### 2.5.1 Using port-forward: 
 ```kubectl -n monitoring port-forward deployment/prometheus-grafana 3000```
 
-Then open a browser and access the dashboard with the address below:
-
+Open a browser and access the Grafana dashboard via address:
 ```http://localhost:3000```
 
+or
+
+#### 2.5.2 Using load balancer: 
+
+2.5.2.1 Patch the Service to use a cloud load balancer using the command below:
+```kubectl patch svc prometheus-grafana -n monitoring -p '{"spec": {"type": "LoadBalancer"}}'```
+
+Note: The Load Balancer can take a couple of minutes in being available on the DNS.
+
+2.5.2.2 Run ```k get svc prometheus-grafana -n monitoring``` and get EXTERNAL-IP.
+
+2.5.2.3 Open a browser and access the Grafana dashboard via address EXTERNAL-IP.
+
+
+Note: The default username and password are:
 ```default username : admin```
 
 ```default password: prom-operator```
 
-#### 2.6.  Access the Dashboard of the Prometheus by using port-forward
+#### 2.6  Access the Dashboard of the Prometheus by using port-forward
 
 ```kubectl port-forward svc/prometheus-operated 9090 -n monitoring```
 
@@ -74,5 +89,6 @@ Start UI  with the following command:
 6. [ Prometheus Grafana dashboard for Kubernetes monitoring - Part 2 - Rahul Wagh](https://www.youtube.com/watch?v=3Xs49Urq16M&list=PL7iMyoQPMtAPbN3A7Prac8vfikIPa02wd&index=3) 
 7. [A Beginner's Guide to Using the Prometheus Operator - Rodrigo Martinez](https://blog.container-solutions.com/prometheus-operator-beginners-guide)
 8. [Helm Dashboard](https://github.com/komodorio/helm-dashboard)
+9. [Exposing K8S Service](https://archive.eksworkshop.com/beginner/130_exposing-service/exposing/)
 
 
