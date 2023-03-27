@@ -39,7 +39,7 @@ or
 
 Note: The Load Balancer can take a couple of minutes in being available on the DNS.
 
-2.5.2.2 Run ```k get svc prometheus-grafana -n monitoring``` and get EXTERNAL-IP.
+2.5.2.2 Run ```kubectl get svc prometheus-grafana -n monitoring``` and get EXTERNAL-IP.
 
 2.5.2.3 Open a browser and access the Grafana dashboard via address EXTERNAL-IP.
 
