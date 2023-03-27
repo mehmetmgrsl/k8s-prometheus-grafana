@@ -35,6 +35,7 @@ or
 #### 2.5.2 Using load balancer: 
 
 2.5.2.1 Patch the Service to use a cloud load balancer using the command below:
+
 ```kubectl patch svc prometheus-grafana -n monitoring -p '{"spec": {"type": "LoadBalancer"}}'```
 
 Note: The Load Balancer can take a couple of minutes in being available on the DNS.
