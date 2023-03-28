@@ -46,6 +46,7 @@ Note: The Load Balancer can take a couple of minutes in being available on the D
 
 
 Note: The default username and password are:
+
 ```default username : admin```
 
 ```default password: prom-operator```
