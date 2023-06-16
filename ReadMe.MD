@@ -1,9 +1,9 @@
 ### 1. Creating a K8S Cluster
 
-#### 1.1. On Local Machine using minikube
+#### 1.1. On Local Machine using kind
 Run the following command to create a K8S cluster.
 
-```minikube delete && minikube start --kubernetes-version=v1.23.0 --memory=6g --bootstrapper=kubeadm --extra-config=kubelet.authentication-token-webhook=true --extra-config=kubelet.authorization-mode=Webhook --extra-config=scheduler.bind-address=0.0.0.0 --extra-config=controller-manager.bind-address=0.0.0.0```
+```kind create cluster --config kind-config.yaml```
 
 #### 1.2. On AWS
 
@@ -92,5 +92,6 @@ Start UI  with the following command:
 7. [A Beginner's Guide to Using the Prometheus Operator - Rodrigo Martinez](https://blog.container-solutions.com/prometheus-operator-beginners-guide)
 8. [Helm Dashboard](https://github.com/komodorio/helm-dashboard)
 9. [Exposing K8S Service](https://archive.eksworkshop.com/beginner/130_exposing-service/exposing/)
+10. https://medium.com/@charled.breteche/kind-fix-missing-prometheus-operator-targets-1a1ff5d8c8ad
 
 
