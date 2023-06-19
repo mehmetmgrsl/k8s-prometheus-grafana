@@ -44,20 +44,42 @@ Note: The Load Balancer can take a couple of minutes in being available on the D
 
 2.5.2.3 Open a browser and access the Grafana dashboard via address EXTERNAL-IP.
 
+or
 
-Note: The default username and password are:
+#### 2.5.3 Using NodePort: 
+
+2.5.3.1 Patch the Grafana service to use a node port using the command below:
+
+```kubectl patch svc prometheus-grafana -n monitoring -p '{"spec": {"type": "NodePort", "ports": [{"name": "web", "nodePort": 31555, "port": 80}]}}'```
+
+2.5.3.2 Run ```kubectl get nodes -o wide``` and get INTERNAL-IP of the master node.
+
+2.5.3.3 Open a browser and access the Grafana dashboard via address http://INTERNAL-IP:31555
+
+
+Note: The default username and password for Grafana dashboard are:
 
 ```default username : admin```
 
 ```default password: prom-operator```
 
-#### 2.6  Access the Dashboard of the Prometheus by using port-forward
+#### 2.6.1  Access the Dashboard of the Prometheus by using port-forward
 
-```kubectl port-forward svc/prometheus-operated 9090 -n monitoring```
+```kubectl port-forward svc/prometheus-kube-prometheus-prometheus 9090 -n monitoring```
 
 Then open a browser and access the dashboard with the address below:
 
 ```http://localhost:9090```
+
+#### 2.6.2  Access the Dashboard of the Prometheus by using NodePort
+
+2.6.3.1 Patch the Prometheus service to use a node port using the command below:
+
+```kubectl patch svc prometheus-kube-prometheus-prometheus -n monitoring -p '{"spec": {"type": "NodePort", "ports": [{"name": "web", "nodePort": 31666, "port": 9090}]}}'```
+
+2.6.3.2 Run ```kubectl get nodes -o wide``` and get INTERNAL-IP of the master node.
+
+2.6.3.3 Open a browser and access the Prometheus dashboard via address http://INTERNAL-IP:31666
 
 #### 2.7. Check the Service Monitors
 
